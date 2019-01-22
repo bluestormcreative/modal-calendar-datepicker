@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// Datepicker modal
+//--------------------------------------------------------------
+@include non-critical() {
+
+	.c-connection-modal--datepicker {
+		grid-row-gap: 0;
+		margin-top: -7px;
+
+		.c-modal-header {
+			display: block;
+		}
+
+		.c-step-description {
+			font-size: 12px;
+			text-align: center;
+		}
+
+		.c-step-content {
+			display: grid;
+			grid-template-columns: repeat( 2, 50% );
+			grid-template-rows: 1fr 50px;
+			height: 292px;
+			justify-content: center;
+			padding: 8px 0 0;
+
+			&__column {
+				padding: 0 40px;
+
+				&--calendar {
+					padding-right: 70px;
+					position: relative;
+
+					&::after {
+						display: block;
+						content: '';
+						position: absolute;
+						height: 100%;
+						width: 1px;
+						background-color: $shark;
+						top: 0;
+						left: 100%;
+					}
+				} // &--calendar
+
+				&--time {
+					padding-left: 76px;
+				}
+			} // &__column
+
+			.c-step-footer {
+				grid-column-start: 1;
+				grid-column-end: 3;
+				left: 0;
+				padding-top: 14px;
+				position: relative;
+				text-align: center;
+				top: 0;
+				width: 100%;
+			}
+		} // .c-step-content
+	} // .c-connection-modal--datepicker
+} // non-critical

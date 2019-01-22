@@ -1,0 +1,85 @@
+//--------------------------------------------------------------
+// Datepicker Calender
+//--------------------------------------------------------------
+@include non-critical() {
+
+	.c-datepicker__calendar {
+
+		.c-month-selector {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 13px;
+			text-transform: uppercase;
+			width: calc( 100% - 4px );
+
+			.c-month,
+			.c-year {
+				font-weight: 900;
+				letter-spacing: 1px;
+			}
+
+			&__prev-month,
+			&__next-month {
+
+				a {
+					@extend %svg-chevron;
+					@extend %center-svg-bg;
+
+					background-size: 50%;
+					display: block;
+					height: 20px;
+					opacity: 0.5;
+					width: 20px;
+				}
+
+				&.active a {
+					opacity: 1;
+				}
+			}
+
+			&__prev-month a {
+				transform: rotate( 90deg );
+			}
+
+			&__next-month a {
+				transform: rotate( -90deg );
+			}
+		} // .c-month-selector
+
+		.c-calendar {
+			font-size: 14px;
+
+			&__name {
+				color: $white-50;
+				padding-bottom: 15px;
+				text-align: center;
+			}
+
+			&__day {
+				padding: 2px 4px;
+
+				span {
+					border-bottom: 1px solid transparent;
+					color: $white-20;
+					display: block;
+				}
+
+				&.selected-timespan span {
+					color: $white;
+				}
+
+				&.current-date span {
+					border-bottom-color: $white;
+				}
+
+				&.end-date span {
+					background-color: rgba( $deepskyblue, 0.2 );
+					border-bottom-color: $deepskyblue;
+					color: $deepskyblue;
+					font-weight: 900;
+				}
+			}
+		}
+	} // .c-datepicker__calendar
+} // non-critical
